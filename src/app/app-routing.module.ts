@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { GastosComponent } from './pages/gastos/gastos.component';
-
+/// TODO 
+// import { BalancoComponent } from './pages/balanco/balanco.component';
+// import { ProventosComponent } from './pages/proventos/proventos.component';
 
 
 const routes: Routes = [

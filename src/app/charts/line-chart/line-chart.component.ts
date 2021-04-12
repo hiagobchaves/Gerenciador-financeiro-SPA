@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { multi } from '../data-line';
 
 @Component({
-  selector: 'line-chart',
+  selector: 'luiz-line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })

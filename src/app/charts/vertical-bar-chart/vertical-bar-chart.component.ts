@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 
+//import { single } from '../data-vertical';
 
 @Component({
-  selector: 'vertical-bar-chart',
+  selector: 'luiz-vertical-bar-chart',
   templateUrl: './vertical-bar-chart.component.html',
   styleUrls: ['./vertical-bar-chart.component.css']
 })

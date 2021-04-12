@@ -10,7 +10,7 @@ interface Classificacao {
 }
 
 @Component({
-  selector: 'home',
+  selector: 'luiz-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -52,7 +52,7 @@ export class HomeComponent  {
       this.acerto = users;
     });
 
-   
+    // this.checkoutForm.reset();
     alert("Transação de R$ " + this.acerto["valorTransacao"] + " criada");
     console.warn('Your order has been submitted', valorSubmetido);
   }
@@ -64,7 +64,7 @@ export class HomeComponent  {
     let mes = event.getMonth()+1;
     let ano= event.getYear()+1900;
     var dateFrom = `${dia}/${mes}/${ano}`;
- 
+    //console.log(dateFrom);
   }
 
   
@@ -72,4 +72,20 @@ export class HomeComponent  {
 
 
 
- 
+  // classificacoes: Classificacao[] = [
+  //   {value: 'alimentacao', viewValue: 'Alimentação'},
+  //   {value: 'educacao', viewValue: 'Educação'},
+  //   {value: 'transporte', viewValue: 'Transporte'},
+  //   {value: 'salario', viewValue: 'Salário'},
+  //   {value: 'trabalhoextra', viewValue: 'Trabalhos Extras'},
+  // ];
+
+
+  //    var dateFrom = `${dia}/${mes}/${ano}`;
+
+    // console.log(valorSubmetido.ID);
+    // console.log(valorSubmetido.classificacaoTransacao);
+    // console.log(valorSubmetido.nome);
+    // console.log(valorSubmetido.valorTransacao);
+
+     //this.acerto.ID = parseInt(valorSubmetido.ID);

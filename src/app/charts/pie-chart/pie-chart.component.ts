@@ -1,8 +1,9 @@
 import { Component, Input , OnChanges } from '@angular/core';
 
+//import { single } from '../data-pie';
 
 @Component({
-  selector: 'pie-chart',
+  selector: 'luiz-pie-chart',
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css']
 })
@@ -24,9 +25,12 @@ export class PieChartComponent implements OnChanges {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-
+  // constructor() {
+    // Object.assign(this, { single });
+  // }
 
   ngOnChanges(): void { 
+    // Object.assign(this, { single });
     console.log(this.single);
   }
 

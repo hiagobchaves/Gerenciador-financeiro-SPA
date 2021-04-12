@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 import { catchError} from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 
+import { environment } from '@env/environment';
 
 const routes = {
   listatransacoes: () => `${environment.UrlServer}/listatransacoes`,
@@ -14,6 +14,8 @@ const routes = {
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/x-www-form-urlencoded',
+
+    //Authorization: 'my-auth-token'
   }),
 };
 
@@ -51,10 +53,54 @@ export class TransacoesService {
     let body = 
     `nome=${nome}&valorTransacao=${valorTransacao}&diaTransacao=${diaTransacao}&mesTransacao=${mesTransacao}&anoTransacao=${anoTransacao}&classificacaoTransacao=${classificacaoTransacao}`;
    
+    //console.log(routes.listatransacoes());
+    //console.log("corpo",body);
     return this.httpClient.post(routes.listatransacoes(), body, httpOptions)
     .pipe(catchError(() => of('Error, could not load users')));
   }
 
+
+
 }
 
- 
+
+
+  // private transacoesSubject = new BehaviorSubject<Transacoes[]>([]);
+
+  // getTransacoesObservable$(): Observable<Transacoes[]> {
+  //   return this.transacoesSubject.asObservable();
+  // }
+
+  // get transacoes$(): Observable<Transacoes[]> {
+  //   return this.transacoesSubject.asObservable();
+  // }
+// import { createEntitie, getEntities, removeEntities } from '../../../src/assets/db';
+
+// getTransacoes(user: string ): Observable<Transacoes[]> {
+
+  //   return of(getEntities())
+  //    .pipe(delay(2000)); /// se colocar o delay ele entra como undefined 
+  // }
+
+  // removeTransacao(transacao): Observable<Transacoes[]> {
+  //   removeEntities(transacao);
+  //   return of(getEntities())
+  //    .pipe(delay(2000)); /// se colocar o delay ele entra como undefined 
+  // }
+
+  // createTransacao(transacao): Observable<Transacoes[]> {
+  //   createEntitie(transacao);
+  //   return of(getEntities())
+  //    .pipe(delay(2000)); /// se colocar o delay ele entra como undefined 
+  // }
+
+  
+
+  
+
+
+  // postTransacao(transacao: Transacoes): Observable<Transacoes> {
+  //   console.log(transacao);
+  //   return this.httpClient.post<Transacoes>(routes.listatransacoes(), transacao);
+  // }
+
