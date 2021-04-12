@@ -8,7 +8,6 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -24,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -39,6 +39,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -120,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "gerenciador-financeiro-spa"
+  "defaultProject": "gerenciador-financeiro-spa",
+  "cli": {
+    "analytics": "dd336ca2-21ad-4553-b691-412deb4c8c99"
+  }
 }

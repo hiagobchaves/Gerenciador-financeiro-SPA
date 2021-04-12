@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPA com Angular</title>
+</head>
+
+<body>
+
+  <mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+
+    <span> My first SPA</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div>
+
+    <spa-alunos [valorInicial]="valor"></spa-alunos>
+
+    <button (click)="aumentarValorAlunos()">Aumentar Quantidade</button>
+    <button (click)="diminuirValorAlunos()">Diminuir Quantidade</button>
+    <button (click)="reiniciarValorAlunos()">Reiniciar Valor</button>
+    <button (click)="exibirTabelaAlunos()">Exibir Tabela</button>
+
+  </div>
+
+  <table *ngIf="exibeTabelaAlunos">
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>E-mail</th>
+      <th>Curso</th>
+    </tr>
+    <tr *ngFor="let aluno of listaAlunos">
+      <td>{{aluno.nome}}</td>
+      <td>{{aluno.idade}}</td>
+      <td>{{aluno.email}}</td>
+      <td>{{aluno.curso}}</td>
+    </tr>
+  </table>
+  <div>
+    <spa-professores [quantidadeInicial]="quantidade"></spa-professores>
+    <button (click)="aumentarQuantidadeProfessores()">Aumentar Quantidade</button>
+    <button (click)="diminuirQuantidadeProfessores()">Diminuir Quantidade</button>
+    <button (click)="reiniciarQuantidadeProfessores()">Reiniciar Valor</button>
+    <button (click)="exibirTabelaProfessores()">Exibir Tabela</button>
+    <button (click)="openModal()">Adicionar Cadastro</button>
+
+  </div>
+
+
+  <table *ngIf="exibeTabelaProfessores">
+    <tr>
+      <th>Nome</th>
+      <th>Especialidade</th>
+      <th>E-mail</th>
+      <th>Horário</th>
+    </tr>
+    <tr *ngFor="let professor of listaProfessores">
+      <td>{{professor.nome}}</td>
+      <td>{{professor.especialidade}}</td>
+      <td>{{professor.email}}</td>
+      <td>{{professor.horario}}</td>
+    </tr>
+  </table>
+
+  <div class="modal-overlay">
+    <div class="modal">
+        <div id="form">
+            <h2>Novo Cadastro</h2>
+            <form action="" onsubmit="Form.submit(event)">
+              <!-- <div *ngIf="alunoId = true"> -->
+                <div class="input-group" id="aluno">
+                    <label
+                        class="sr-only"
+                        for="description">Nome</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Seu nome aqui"
+                    />
+                </div>
+                <div class="input-group">
+                    <label
+                        class="sr-only"
+                        for="amount">Idade</label>
+                    <input
+                        type="number"
+                        step="1"
+                        id="idade"
+                        name="idade"
+                        placeholder="Sua Idade aqui"
+                    />
+                </div>
+                <div class="input-group">
+                  <label
+                      class="sr-only"
+                      for="description">Email</label>
+                  <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="Seu email aqui"
+                  />
+                </div>
+                <div class="input-group">
+                  <label
+                      class="sr-only"
+                      for="description">Curso</label>
+                  <input
+                      type="text"
+                      id="curso"
+                      name="curso"
+                      placeholder="Nome do seu curso aqui"
+                  />
+                </div>
+              <div id="professor">
+                <div class="input-group">
+                  <label
+                      class="sr-only"
+                      for="description">Nome</label>
+                  <input
+                      type="text"
+                      id="nome"
+                      name="nome"
+                      placeholder="Seu nome aqui"
+                  />
+              </div>
+              <div class="input-group" id="professor">
+                <label
+                    class="sr-only"
+                    for="description">Especialidade</label>
+                <input
+                    type="text"
+                    id="especialidade"
+                    name="especialidade"
+                    placeholder="Sua especialidade aqui"
+                />
+              </div>
+              <div class="input-group">
+                <label
+                    class="sr-only"
+                    for="description">Email</label>
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Seu email aqui"
+                />
+              </div>
+              <div class="input-group">
+                <label
+                    class="sr-only"
+                    for="description">Horário</label>
+                <input
+                    type="text"
+                    id="horario"
+                    name="horario"
+                    placeholder="Perido disponível para dar aulas"
+                />
+              </div>
+              </div>
+                <div class="input-group actions">
+                    <a
+                    onclick="Modal.tooggleModal()"
+                    href="#"
+                    class="button cancel">Cancelar</a>
+                    <button>Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
